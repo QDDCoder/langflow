@@ -6,6 +6,16 @@ ENV TZ=UTC
 # Set up work directory
 WORKDIR /workspace
 
+# 删除原有的 apt 源配置
+RUN rm -rf /etc/apt/sources.list.d/*
+
+# 设置新的 apt 源
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian bookworm main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian bookworm-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free" >> /etc/apt/sources.list
+
+
+
 # Install additional dev dependencies
 RUN apt-get update && apt-get install -y \
     zsh \
