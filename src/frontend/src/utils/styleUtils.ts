@@ -234,6 +234,7 @@ import {
   Zap,
   ZoomIn,
   ZoomOut,
+  LandPlot
 } from "lucide-react";
 import { FaApple, FaDiscord, FaGithub } from "react-icons/fa";
 import { AWSIcon } from "../icons/AWS";
@@ -519,6 +520,7 @@ export const SIDEBAR_CATEGORIES = [
   { display_name: "Tools", name: "tools", icon: "Hammer" },
   { display_name: "Logic", name: "logic", icon: "ArrowRightLeft" },
   { display_name: "Helpers", name: "helpers", icon: "Wand2" },
+  { display_name: "DDCoder", name: "ddcoder", icon: "Wand2" },
 ];
 
 export const SIDEBAR_BUNDLES = [
@@ -577,7 +579,7 @@ export const categoryIcons = {
   toolkits: Package2,
   tools: Hammer,
   custom: Edit,
-  custom_components: GradientInfinity,
+  custom_components: GradientInfinity
 };
 
 export const nodeIconsLucide: iconsType = {
@@ -973,5 +975,5 @@ export const nodeIconsLucide: iconsType = {
   ScrapeGraphSmartScraperApi: ScrapeGraph,
   ScrapeGraphMarkdownifyApi: ScrapeGraph,
   DollarSign,
-  BookOpenText,
+  BookOpenText
 };
