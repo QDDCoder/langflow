@@ -1045,10 +1045,6 @@ export const nodeIconsLucide: iconsType = {
   MicOff,
   Mic2,
   DollarSign,
-<<<<<<< HEAD
-  BookOpenText
-=======
   BookOpenText,
-  AudioLines,
->>>>>>> 6c2ff92ccf083f038d9a97a749b4e0f30a60247a
+  AudioLines
 };
