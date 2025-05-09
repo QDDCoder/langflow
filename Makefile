@@ -61,19 +61,15 @@ help: ## show this help message
 
 reinstall_backend: ## forces reinstall all dependencies (no caching)
 	@echo 'Installing backend dependencies'
-	@uv sync -n --reinstall --frozen --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+	@uv sync -n --reinstall --frozen
 
 install_backend: ## install the backend dependencies
 	@echo 'Installing backend dependencies'
-<<<<<<< HEAD
-	@uv sync --frozen $(EXTRA_ARGS) --index-url https://pypi.tuna.tsinghua.edu.cn/simple
-=======
 	@uv sync --frozen --extra "postgresql" $(EXTRA_ARGS)
->>>>>>> c608a4fd5d5cf402cd34f8f7f79f761fa40a4106
 
 install_frontend: ## install the frontend dependencies
 	@echo 'Installing frontend dependencies'
-	@cd src/frontend && npm install --registry https://registry.npmmirror.com > /dev/null 2>&1
+	@cd src/frontend && npm install > /dev/null 2>&1
 
 build_frontend: ## build the frontend static files
 	@echo '==== Starting frontend build ===='
@@ -119,7 +115,7 @@ clean_all: clean_python_cache clean_npm_cache # clean all caches and temporary d
 	@echo "$(GREEN)All caches and temporary directories cleaned.$(NC)"
 
 setup_uv: ## install poetry using pipx
-	pipx install uv --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+	pipx install uv
 
 add:
 	@echo 'Adding dependencies'
@@ -217,10 +213,10 @@ lint: install_backend ## run linters
 	@uv run mypy --namespace-packages -p "langflow"
 
 install_frontendci:
-	@cd src/frontend && npm ci --registry https://registry.npmmirror.com > /dev/null 2>&1
+	@cd src/frontend && npm ci > /dev/null 2>&1
 
 install_frontendc:
-	@cd src/frontend && $(call CLEAR_DIRS,node_modules) && rm -f package-lock.json && npm install --registry https://registry.npmmirror.com > /dev/null 2>&1
+	@cd src/frontend && $(call CLEAR_DIRS,node_modules) && rm -f package-lock.json && npm install > /dev/null 2>&1
 
 run_frontend: ## run the frontend
 	@-kill -9 `lsof -t -i:3000`
