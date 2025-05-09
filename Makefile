@@ -65,7 +65,11 @@ reinstall_backend: ## forces reinstall all dependencies (no caching)
 
 install_backend: ## install the backend dependencies
 	@echo 'Installing backend dependencies'
+<<<<<<< HEAD
 	@uv sync --frozen $(EXTRA_ARGS) --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+=======
+	@uv sync --frozen --extra "postgresql" $(EXTRA_ARGS)
+>>>>>>> c608a4fd5d5cf402cd34f8f7f79f761fa40a4106
 
 install_frontend: ## install the frontend dependencies
 	@echo 'Installing frontend dependencies'

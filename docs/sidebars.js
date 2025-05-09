@@ -25,7 +25,6 @@ module.exports = {
         'Sample-Flows/blog-writer',
         'Sample-Flows/document-qa',
         'Sample-Flows/memory-chatbot',
-        'Sample-Flows/math-agent',
         'Sample-Flows/sequential-agent',
         'Sample-Flows/travel-planning-agent',
       ],
@@ -40,6 +39,7 @@ module.exports = {
         "Concepts/concepts-flows",
         "Concepts/concepts-objects",
         "Concepts/concepts-publish",
+        "Concepts/mcp-server",
         "Concepts/concepts-file-management",
         "Concepts/concepts-voice-mode",
       ],
@@ -79,13 +79,10 @@ module.exports = {
       items: [
         "Configuration/configuration-api-keys",
         "Configuration/configuration-authentication",
-        "Configuration/configuration-auto-saving",
-        "Configuration/configuration-backend-only",
         "Configuration/configuration-cli",
         "Configuration/configuration-custom-database",
         "Configuration/configuration-global-variables",
         "Configuration/environment-variables",
-        "Configuration/configuration-security-best-practices"
       ],
     },
     {
@@ -98,6 +95,7 @@ module.exports = {
         "Develop/memory",
         "Develop/session-id",
         "Develop/logging",
+        "Develop/webhook",
       ],
     },
     {
@@ -115,9 +113,25 @@ module.exports = {
           label: "Docker"
         },
         {
-          type: "doc",
-          id: "Deployment/deployment-kubernetes",
-          label: "Kubernetes"
+          type: "category",
+          label: "Kubernetes",
+          items: [
+            {
+              type: "doc",
+              id: "Deployment/deployment-prod-best-practices",
+              label: "Langflow architecture and best practices"
+            },
+            {
+              type: "doc",
+              id: "Deployment/deployment-kubernetes-dev",
+              label: "Deploy in development"
+            },
+            {
+              type: "doc",
+              id: "Deployment/deployment-kubernetes-prod",
+              label: "Deploy in production"
+            }
+          ]
         },
         {
           type: "doc",
@@ -138,7 +152,7 @@ module.exports = {
           type: "doc",
           id: "Deployment/deployment-render",
           label: "Render"
-        }
+        },
       ],
     },
     {
@@ -161,14 +175,6 @@ module.exports = {
       type: "category",
       label: "Integrations",
       items: [
-        {
-          type: 'category',
-          label: 'MCP (Model Context Protocol)',
-          items: [
-            'Integrations/MCP/integrations-mcp',
-            'Integrations/MCP/mcp-component-astra',
-          ],
-        },
         "Integrations/Apify/integrations-apify",
         {
           type: "doc",
@@ -180,6 +186,11 @@ module.exports = {
           type: "doc",
           id: "Integrations/Composio/integrations-composio",
           label: "Composio",
+        },
+        {
+          type: "doc",
+          id: "Integrations/mcp-component-astra",
+          label: "Astra DB MCP server",
         },
         {
           type: 'category',
